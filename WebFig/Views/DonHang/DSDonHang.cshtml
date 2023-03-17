@@ -1,0 +1,88 @@
+﻿@model PagedList.IPagedList<WebFig.Models.Order>
+@using PagedList.Mvc;
+@Styles.Render("~/Content/css")
+@{
+    ViewBag.Title = "Danh sách đơn hàng";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <table style="margin-top:200px" class="table">
+        <tr>
+            <th>
+                Mã đơn
+            </th>
+            <th>
+                Phương thức vận chuyển
+            </th>
+            <th>
+                Phương thức thanh toán
+            </th>
+            <th>
+                Ngày đặt
+            </th>
+            <th>
+                Tình trạng
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdOrder)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Delivery.tenDelivery)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Payment.tenPayment)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NgayDat)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status.NameStatus)
+                </td>
+                <td>
+                </td>
+                <td>
+                    <div class="Detail">
+                        <a class="btn btn-check-in" href="@Url.Action("ChiTietDonHang","DonHang", new {@id = item.IdOrder})">Chi tiết</a>
+                    </div>
+                </td>
+            </tr>
+        }
+
+    </table>
+    <div>
+        <div>
+            Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) /
+            @Model.PageCount
+        </div>
+        <div class="MenuTrang">
+            @Html.PagedListPager(Model, page => Url.Action("DSDonHang", new
+            {
+                page = page
+            }))
+        </div>
+    </div>
+</div>
+<style>
+    .MenuTrang li {
+        display: inline;
+    }
+</style>
+<style type="text/css">
+    #mau-nut a {
+        clear: both;
+        background-color: red;
+        color: snow;
+    }
+
+        #mau-nut a:hover {
+            background-color: darkcyan;
+            color: snow;
+        }
+</style>

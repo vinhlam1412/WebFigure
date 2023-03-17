@@ -1,0 +1,16 @@
+﻿
+<ul class="header__sub-description-list">
+    @foreach (var item in ViewBag.tenCategory)
+    {
+        <li class="list-group-item header__sub-description-item" style="text-decoration:none">
+            <a class="header__sub-description-item-link" href="@Url.Action("Index","UserHome", new {idCategory = item.Key })">
+                @item.Value
+            </a>
+        </li>
+
+    }
+</ul>
+
+
+
+

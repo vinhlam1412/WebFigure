@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebFig", "WebFig\WebFig.csproj", "{428149C3-037E-49CD-80A8-D8C1343ED4D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{7E95417F-A480-46E0-99FE-4B05C5FB0AF5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{428149C3-037E-49CD-80A8-D8C1343ED4D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{428149C3-037E-49CD-80A8-D8C1343ED4D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{428149C3-037E-49CD-80A8-D8C1343ED4D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{428149C3-037E-49CD-80A8-D8C1343ED4D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E95417F-A480-46E0-99FE-4B05C5FB0AF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E95417F-A480-46E0-99FE-4B05C5FB0AF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E95417F-A480-46E0-99FE-4B05C5FB0AF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E95417F-A480-46E0-99FE-4B05C5FB0AF5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {46A69C47-CA29-41CF-BFFE-425B7AB48D87}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,383 @@
+﻿@model IEnumerable<WebFig.Models.Cart>
+@Styles.Render("~/Content/css")
+@{
+    ViewBag.Title = "Đặt hàng";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="slider">
+    <div class="container">
+        <div id="carouselExampleDark" class="carousel carousel-light slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="~/Content/img/slide__1.jpg" class="d-block w-100">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h1 class="carousel-header">First slide label</h1>
+                        <h4 class="carousel-description">Some representative placeholder content for the first slide.</h4>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="~/Content/img/slide__3.jpg" class="d-block w-100">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h1 class="carousel-header">Second slide label</h1>
+                        <h4 class="carousel-description">Some representative placeholder content for the second slide.</h4>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://www.mypage.vn/wp-content/themes/mypage/images/web-doanh-nghiep.png" class="d-block w-100">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h1 class="carousel-header">Third slide label</h1>
+                        <h4 class="carousel-description">Some representative placeholder content for the third slide.</h4>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="cart">
+    <h1 style="text-align:center">Đặt hàng</h1>
+    <div class="container">
+
+        @if (Session["GiohangAccount"] != null)
+        {
+            <div class="container ">
+
+
+                <table class="table">
+                    <tr>
+                        <div class="row cart-heading">
+                        <th>
+                            <div class="col-lg-3 cart-heading-name"> Tên</div>
+                        </th>
+                        <th>
+                            <div class="col-lg-3 cart-heading-name">Hình</div>
+                        </th>
+                        <th>
+                            <div class="col-lg-3 cart-heading-name">Giá</div>
+                        </th>
+                        <th>
+                            <div class="col-lg-3 cart-heading-name">Số lượng</div>
+                        </th>                       
+                        <th></th>
+            </div>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <div class="cart-name" title="@item.Product.ten">@item.Product.ten</div>
+                    </td>
+                    <td><img src="@item.Product.hinh" width="120" alt="" class="cart-img"></td>
+                    @using (Html.BeginForm("Capnhatgiohang", "GioHang", new { @id = item.idProduct }))
+                    {
+                        <div class="col-lg-3">
+                            @*  <td>@String.Format("{0:0,0}", item.gia) VND</td>*@
+                        <td><div class="cart-price">@String.Format("{0:0,0}", item.gia) VND</div></td>
+                        <td><input type="number" min="1" max="@(item.Product.soluongton)" name="txtSoLg" value="@item.soluong" class="cart-price" /></td>
+
+
+
+                        @*  <td>@(item.soluong * item.gia)</td>*@
+                        @*  <td><div class="cart-price">@(item.soluong * item.gia)</div></td>*@
+                </div>
+
+                <td><button class="btn-delete"> <a href="@Url.Action("Detail", "UserHome", new { @id = item.idProduct })">Chi tiết</a> </button>| <button class="btn-delete"><a>@Html.ActionLink("Xoá", "XoaGiohang", new { @id = item.idProduct, @class = "btn-delete" })</a></button></td>
+                <td><input type="submit" value="Cập nhật" class="btn-delete" id="num" /></td>
+
+            }
+                    </tr>
+                }
+
+            <tr style="font-weight:bold; text-align:left; color:red">
+                <td colspan="2"> <div class="cart-title-total">Số loại sản phẩm: <span>@ViewBag.Tongsoluongsanpham</span></div></td>
+                @* <td colspan="2" class="cart-title-total">Số lượng sản phẩm: @ViewBag.Tongsoluong</td>*@
+                <td><div class="cart-title-total">Số lượng: <span>@ViewBag.Tongsoluong</span></div></td>
+                @* <td colspan="4" class="cart-title-total">Tổng tiền: @String.Format("{0:0,0}", ViewBag.Tongtien) VND</td>*@
+                <td><div class="cart-title-total">Tổng tiền: <span>@String.Format("{0:0,0}", ViewBag.Tongtien) VND</span></div> </td>
+            </tr>
+
+            <tr style="font-weight:bold; color:white; text-align:right;">
+                <td colspan="6">
+
+                    <button class="btn-delete btn-xoa">@Html.ActionLink("Xóa giỏ hàng", "XoaTatCaGioHang", new { @style = "text-decoration:none; color:white" })</button>
+
+
+                </td>
+            </tr>
+            <tr style="font-weight:bold; color:white; text-align:right">
+            <tr style="font-weight:bold; color:white; text-align:right">
+                <td colspan="6">
+                    <div class="cart-btn"><button class="btn-delete">@Html.ActionLink("Đặt hàng", "DatHang", "GioHang", new { @style = "cart-payment" })</button></div>
+
+                </td>
+            </tr>
+
+            </table>
+        </div>
+    }
+    else
+    {
+        <div class="container">
+            <h1>
+                @ViewBag.ThongBao1
+            </h1>
+        </div>
+    }
+        </div>
+
+
+        <h2 style="text-align:center">Thông tin đặt hàng</h2>
+        @using WebFig.Models
+        @{
+            Account account = (Account)Session["TaiKhoan"];
+
+        }
+        <table align="center">
+            @using (Html.BeginForm())
+            {
+                @Html.ValidationSummary(true)
+                <tr style="height:40px">
+                    <td>Họ tên khách hàng:</td>
+                    <td style="font-weight:bold">@ViewBag.HoTen</td>
+                    <td><a href="@Url.Action("AccountDetail", "UserHome", new { @idAccount = account.idAccount })">Sửa</a> </td>
+                </tr>
+                <tr style="height:40px">
+                    <td>Địa chỉ: </td>
+                    <td style="font-weight:bold">@ViewBag.DiaChi</td>
+                    <td><a href="@Url.Action("AccountDetail", "UserHome", new { @idAccount = account.idAccount })">Sửa</a> </td>
+                </tr>
+                <tr style="height:40px">
+                    <td>Điện thoại: </td>
+                    <td style="font-weight:bold">@ViewBag.SoDT</td>
+                    <td><a href="@Url.Action("AccountDetail", "UserHome", new { @idAccount = account.idAccount })">Sửa</a> </td>
+                </tr>
+                <tr style="height:40px">
+                    <td>Email: </td>
+                    <td style="font-weight:bold">@ViewBag.Email</td>
+                    <td><a href="@Url.Action("AccountDetail", "UserHome", new { @idAccount = account.idAccount })">Sửa</a> </td>
+                </tr>
+                <tr style="height:40px">
+                    <td>Ngày đặt: </td>
+                    <td style="font-weight:bold">@DateTime.Now.ToShortDateString()</td>
+                </tr>
+                <tr style="height:40px">
+                    <td>Thanh toán: </td>
+                    <td style="font-weight:bold">@Html.DropDownList("idPayment", ViewBag.Payments as SelectList, new { @class = "modal-input" })</td>
+                </tr>
+                <tr style="height:40px">
+                    <td>Vận chuyển: </td>
+                    <td style="font-weight:bold">@Html.DropDownList("idDelivery", ViewBag.Deliveries as SelectList, new { @class = "modal-input" })</td>
+                </tr>
+                <tr style="height:40px">
+                    <td></td>
+                    <td style="font-weight:bold">
+                        <input type="submit" value="Xác nhận" class="btn btn-success" />
+                    </td>
+                </tr>
+
+            }
+        </table>
+
+        <style>
+            .cart {
+                margin-top: calc(var(--header-height) + var(--header-sub) + 32px);
+                margin-bottom: 180px;
+            }
+
+            .cart-header {
+                text-align: center;
+            }
+
+            .cart-title {
+                font-size: 3.2rem;
+                font-weight: 600;
+                color: #000;
+            }
+
+            .cart-description,
+            .cart-description span {
+                font-size: 1.6rem;
+                font-weight: 300;
+                margin-top: 12px;
+            }
+
+                .cart-description span {
+                    color: rgba(13, 146, 39, 0.849);
+                }
+
+            .cart-body {
+                margin-top: 32px;
+            }
+
+            .cart-heading-name {
+                padding: 10px 0;
+                font-size: 1.6rem;
+                color: #000;
+                font-weight: 600;
+                text-align: center;
+            }
+
+            .cart-item {
+                border-top: 1px solid var(--border-color);
+            }
+
+                .cart-item .col-lg-3 {
+                    text-align: center;
+                    padding: 12px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+            .cart-product {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .cart-name {
+                color: #000;
+                font-size: 2rem;
+                font-weight: 600;
+                /* Tối đa chỉ có 1 dòng duy nhất */
+                text-align: center;
+                line-height: 2.8rem;
+                overflow: hidden;
+                max-height: 2.8rem;
+                /* Ẩn bớt nội dung và thể hiện = dấu 3 chấm */
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 1;
+            }
+
+            .btn-wrap {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .btn-delete:hover {
+                color: #fff;
+                background-color: var(--light-red-color);
+                border: 1px solid var(--light-red-color);
+            }
+
+            .btn-delete {
+                width: 96px;
+                height: 30px;
+                color: #000;
+                background-color: #fff;
+                border: 1px solid #000;
+                text-align: center;
+                margin: 15px 8px;
+                font-size: 1.4rem;
+                transition: 0.2s;
+                line-height: 28px;
+                cursor: pointer;
+            }
+
+            .btn-xoa {
+                width: 150px;
+                color: white;
+                background-color: black;
+            }
+
+            .cart-price {
+                font-weight: 400;
+                font-size: 1.6rem;
+                margin-top: 26px;
+            }
+
+            .cart-delete:hover {
+                color: var(--light-red-color);
+            }
+
+            .cart-delete {
+                font-size: 2.4rem;
+                position: relative;
+                left: -60px;
+                cursor: pointer;
+                color: rgb(73, 73, 73);
+            }
+
+            .cart-quantity {
+                font-weight: 400;
+                font-size: 1.6rem;
+                border: none;
+                border: 1px solid #000;
+                margin-top: 26px;
+                text-align: center;
+                outline: none;
+            }
+
+            .cart-footer {
+                margin-right: 105px;
+            }
+
+            .cart-total {
+                display: flex;
+                justify-content: flex-end;
+                padding: 24px 0;
+            }
+
+            .cart-title-total:first-child {
+                margin-right: 32px;
+            }
+
+            .cart-title-total {
+                color: #000;
+                font-weight: 400;
+                font-size: 1.8rem;
+            }
+
+                .cart-title-total span {
+                    font-weight: 600;
+                    font-size: 1.8rem;
+                }
+
+            .cart-btn {
+                display: flex;
+                justify-content: flex-end;
+            }
+
+            .cart-next,
+            .cart-payment {
+                cursor: pointer;
+                padding: 8px;
+                font-weight: 600;
+                font-size: 1.6rem;
+                text-transform: uppercase;
+            }
+
+            .cart-next {
+                margin-right: 12px;
+            }
+
+            .cart-payment:hover {
+                opacity: 0.9;
+            }
+
+            .cart-payment {
+                color: #fff;
+                background-color: #000;
+                transition: 0.3s;
+            }
+
+            .cart-price-mobile {
+                font-size: 1.4rem;
+                font-weight: 400;
+                display: none;
+            }
+        </style>

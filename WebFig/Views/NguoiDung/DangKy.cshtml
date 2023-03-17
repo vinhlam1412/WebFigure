@@ -1,0 +1,121 @@
+﻿@model WebFig.Models.Account
+<link rel="stylesheet" href="~/Content/base.css">
+<link rel="stylesheet" href="~/Content/register.css">
+<link rel="stylesheet" href="~/Content/responsive.css">
+
+@{
+    ViewBag.Title = "Đăng ký";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@if (ViewBag.error != null)
+{       
+<script>
+    alert("Username hoặc email đã tồn tại")
+</script>
+}
+
+<div class="form">
+    <div class="container">
+        <div class="row">
+            <div class="register-item col-lg-6 col-md-12 col-sm-12 col-12">
+                <img src="https://www.tutoreye.com/images/home/login-illus-1.svg" alt="" class="register-img" mar>
+            </div>
+            <div class="form-register col-lg-6 col-md-12 col-sm-12 col-12">
+                <div class="auth-form">
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-horizontal">
+                            <div class="auth-form__header">
+                                <h3 class="auth-form__heading">Đăng Ký</h3>
+                            </div>
+                            <div class="auth-form__group">
+                                @ViewBag.Vinh
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.username, "Tên đăng nhập", htmlAttributes: new { @class = "auth-form__title" })
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.username, new { htmlAttributes = new { @class = "auth-form__input" } })
+                                        @Html.ValidationMessageFor(model => model.username, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="auth-form__group">
+                                @Html.LabelFor(model => model.password, "Mật khẩu", htmlAttributes: new { @class = "auth-form__title" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "auth-form__input" } })
+                                    @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            @*            @Html.DropDownList("idCategory", ViewBag.loai as SelectList, new { @class = "modal-input" })*@
+
+                            @* <div class="auth-form__group">
+                                    @Html.LabelFor(model => model.password, "Mật khẩu", htmlAttributes: new { @class = "auth-form__title" })
+                                    <div class="col-md-10">
+                                        @Html.TextBox("MatKhauXacNhan" )
+
+                                    </div>
+                                </div>*@
+                            <div class="auth-form__group">
+                                @Html.LabelFor(model => model.password_verify, "Mật khẩu xác nhận", htmlAttributes: new { @class = "auth-form__title" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.password_verify, new { htmlAttributes = new { @class = "auth-form__input" } })
+                                    @Html.ValidationMessageFor(model => model.password_verify, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="auth-form__group">
+                                @Html.LabelFor(model => model.Hoten, "Họ tên", htmlAttributes: new { @class = "auth-form__title" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Hoten, new { htmlAttributes = new { @class = "auth-form__input" } })
+                                    @Html.ValidationMessageFor(model => model.Hoten, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="auth-form__group">
+                                @Html.LabelFor(model => model.SoDT, "Số điện thoại", htmlAttributes: new { @class = "auth-form__title" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.SoDT, new { htmlAttributes = new { @class = "auth-form__input" } })
+                                    @Html.ValidationMessageFor(model => model.SoDT, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="auth-form__group">
+                                @Html.LabelFor(model => model.Diachi, "Địa chỉ", htmlAttributes: new { @class = "auth-form__title" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Diachi, new { htmlAttributes = new { @class = "auth-form__input" } })
+                                    @Html.ValidationMessageFor(model => model.Diachi, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="auth-form__group">
+                                <div class="auth-form__title">
+                                    @Html.LabelFor(model => model.Email, "Email", htmlAttributes: new { @class = "auth-form__title" })
+                                </div>
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "auth-form__input" } })
+                                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="auth-form__controls">
+                                <div class="col-md-offset-2 col-md-10">
+                                    <input type="submit" value="Đăng Ký" class="btn btn-check-in" />
+                                    <script>
+                                        alert("Vui lòng xác nhận email sau khi đăng kí")
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+

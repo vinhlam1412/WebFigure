@@ -1,0 +1,76 @@
+:root {
+    --primary-color: #000;
+    --white-color: #fff;
+    --text-color: #dcdcdc;
+    --border-color: #ccc;
+    --hover-color: rgb(238, 238, 238);
+    --light-red-color: #c30005;
+    --dark-red-color: #9c0004;
+    --facebook-color: #3b5999;
+    --twitter-color: #46c1f6;
+    --instagram-color: #e1306c;
+    --youtube-color: #de463b;
+    --header-height: 68px;
+    --header-sub: 52px;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.65%;
+    line-height: 16px;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    color: #000;
+}
+
+/* Animation */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes growth {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* Button */
+
+.btn {
+    min-width: 115px;
+    min-height: 30px;
+    padding: 0;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: var(--white-color);
+    background-color: var(--light-red-color);
+}
+
+    .btn:hover {
+        background-color: var(--dark-red-color);
+    }
+
+
+/* Modal */
+

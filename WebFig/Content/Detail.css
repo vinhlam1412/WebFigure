@@ -1,0 +1,167 @@
+.detail {
+    margin-top: calc(var(--header-height) + var(--header-sub) + 20px);
+}
+
+.sub-img-item,
+.main-img-item {
+    cursor: pointer;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+
+.sub-img {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sub-img-item {
+    width: 95%;
+}
+
+.main-img {
+    padding-left: 0;
+    margin-left: -3px;
+}
+
+.main-img-item {
+    width: 90%;
+}
+
+.breadcrumb-item {
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+.product-name {
+    font-size: 3rem;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    color: var(--dark-blue-color);
+}
+
+.product-price {
+    font-size: 2.8rem;
+    font-weight: 500;
+    margin-top: 12px;
+    color: var(--dark-blue-color);
+}
+
+.product-extant,
+.product-quantity {
+    letter-spacing: 0.2px;
+}
+
+.product-extant {
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-top: 12px;
+}
+
+.product-quantity {
+    display: flex;
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-top: 15px;
+    letter-spacing: 0.2px;
+}
+
+.product-wrap {
+    display: flex;
+    align-items: center;
+    width: 150px;
+    margin-left: 18px;
+    margin-top: -2px;
+}
+
+.quantity-minus,
+.quantity-add {
+    background-color: #f5f5f5;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.quantity-input {
+    width: 55px;
+    text-align: center;
+    font-size: 1.7rem;
+    font-weight: 600;
+    border: 2px solid #f5f5f5;
+}
+
+.product-button {
+    margin-top: 24px;
+}
+
+.btn-add:hover,
+.btn-buy:hover {
+    transform: rotateY(-15deg);
+    background-color: var(--dark-red-color);
+}
+
+.btn-add,
+.btn-buy {
+    width: 125px;
+    height: 36px;
+    margin-right: 14px;
+    background-color: var(--light-red-color);
+    outline: none;
+    border: none;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    transition: all 0.2s linear;
+}
+
+.btn a {
+    text-decoration: none;
+    color: var(--white-color);
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.product-help {
+    margin-top: 28px;
+}
+
+.nav a {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--dark-blue-color);
+    color: #181f2c;
+}
+
+.nav a:hover {
+    color: var(--primary-color);
+}
+
+.nav-tabs .nav-link {
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    font-size: 1.6rem;
+}
+
+.tab-content {
+    font-size: 1.5rem;
+}
+
+.tab-pane {
+    padding: 12px;
+}
+
+.tab-pane h4 {
+    margin-bottom: 10px;
+}
+
+.tab-pane p {
+    letter-spacing: 0.4px;
+    line-height: 2.6rem;
+}
+
+.tab-pane strong {
+    color: #5482ab;
+    color: var(--dark-blue-color);
+}

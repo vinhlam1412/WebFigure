@@ -1,0 +1,110 @@
+﻿@model WebFig.Models.Product
+
+@{
+    ViewBag.Title = "Chi tiết sản phẩm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Styles.Render("~/Content/detail.css")
+<h2>Detail</h2>
+<div class="detail">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-5 col-sm-5 col-6">
+
+                <div class="row img-wrap">
+                    <div class="col-lg-3 sub-img">
+                        <img src="@Html.DisplayFor(p=>p.hinhDetail1)" alt="" onclick="myFunction(this)" class="sub-img-item">
+                        <img src="@Html.DisplayFor(p=>p.hinhDetail2)" alt="" onclick="myFunction(this)" class="sub-img-item">
+                        <img src="@Html.DisplayFor(p=>p.hinhDetail3)" alt="" onclick="myFunction(this)" class="sub-img-item">
+                    </div>
+                    <div class="col-lg-9 main-img">
+                        <img class="main-img-item" id="imageBox" src="@Html.DisplayFor(p=>p.hinh)" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-7 col-sm-7 col-6">
+                <div class="product-description">
+                    <nav aria-label="breadcrumb">
+                        <div class="breadcrumb">
+                            <li class="breadcrumb-item" aria-current="page">Home</li>
+                            <li class="breadcrumb-item" aria-current="page">Product</li>
+                            <li class="breadcrumb-item active" aria-current="page">Detail</li>
+                        </div>
+                    </nav>
+                    <div class="product-name">@Html.DisplayFor(p => p.ten)</div>
+                    <div class="product-price"> @String.Format("{0:0,0}", Model.gia)<span> VND</span></div>
+                    <div class="product-extant">Còn lại: @Html.DisplayFor(p => p.soluongton)</div>
+                    @if (@ViewBag.SoLgTon <= 0)
+                    {
+                        <br />
+                        <h1 style="color:red">Hết hàng</h1>
+                    }
+                    else{
+                    <div class="product-button">
+                        <div class="btn btn-add">
+                            <a target="khai" href="@Url.Action("ThemGioHang","GioHang", new { @id = @ViewBag.ProductId, @strURl = Request.Url.ToString()})">Thêm vào giỏ</a>
+                        </div>
+                        @* <div class="btn btn-buy">
+                <a href="" class="">Mua ngay</a>
+            </div>*@
+                    </div>
+                    }
+                </div>
+                <div class="product-help">
+                    <div class="nav nav-tabs">
+                        <a href="#home" class="nav-link active" data-bs-toggle="tab" aria-current="page">Mô tả</a>
+                        <a href="#contact" class="nav-link" data-bs-toggle="tab">Hướng dẫn đặt hàng</a>
+                    </div>
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="home">
+                            <p>- Hãng sản xuất: @Html.DisplayFor(m => m.NSX.tenNSX)</p>
+                            <p>- Loại: @Html.DisplayFor(m => m.Category.tenCategory)</p>
+                            <p>- Tỉ lệ: @Html.DisplayFor(m => m.Size.tenSize)</p>
+                            <p>- Chất liệu: PVC, ABS</p>
+                            <p>- Thời gian phát hành: Tháng 5 năm 2022</p>
+                        </div>
+                        <div class="tab-pane fade" id="contact">
+                            <h4>Lưu ý:</h4>
+                            <p>- Thời gian chúng tôi gọi điện lại xác nhận đơn hàng trong 24h sau khi quý khách gửi đơn</p>
+                            <p>- Giao hàng sau khi xác nhận đơn: <strong>TRONG NGÀY SHOP SẼ GÓI HÀNG VÀ GỬI</strong></p>
+                            <p>- Thời gian Giao hàng :</p>
+                            <p>+ Đối với Khách hàng ở Tp.HCM: trong 24h ( nếu quý khách cần giao ngay vui lòng liên hệ) </p>
+                            <p>+ Đối với Khách hàng ngoài Tp.HCM : 1-3 ngày đối với khu vực Thành phố và 2-5 ngày đối với khu vực Huyện, Xã</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    </div>
+<script>
+
+    function myFunction(smallImg) {
+        var fullImg = document.getElementById("imageBox");
+        fullImg.src = smallImg.src;
+    }
+
+</script>
+
+<style>
+    .img-wrap {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .main-img-item {
+        width: 126%;
+    }
+    .sub-img {
+        flex-direction: row;
+        margin-left: -15px;
+    }
+    .sub-img-item {
+        width: 145%;
+        padding: 5px;
+    }
+    .btn-add {
+        line-height: 32px;
+    }
+</style>

@@ -1,0 +1,89 @@
+﻿@model WebFig.Models.Gioithieu
+
+@{
+    ViewBag.Title = "Giới Thiệu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Styles.Render("~/Content/introduce.css")
+
+<div class="introduce">
+    <div class="introduce-header">
+        <div class="container">
+            <div class="row">
+                <div class="introduce-item col-lg-6">
+                    <h1 class="introduce-heading">@Html.DisplayFor(p => p.Topic1)</h1>
+                    <div class="introduce-description">
+                        @Html.Raw(Model.Para)
+                    </div>
+                </div>
+                <div class="introduce-item col-lg-6">
+                    <img class="introduce-img-header" src="https://ae01.alicdn.com/kf/Hfdcbecba8d1a4009a1a13e42d7915991A/Demon-Slayer-Daki-And-Giyuutarou-GK-Resin-Limited-Statue-Figure.jpg_Q90.jpg_.webp" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="introduce-category">
+        <div class="container">
+            <div class="row">
+                <h1 class="introduce-heading">@Html.DisplayFor(p => p.Topic2)</h1>
+                <div class="introduce-item col-lg-6">
+                    <h2 class="introduce-name">@Html.DisplayFor(p => p.Topic3)</h2>
+                    <div class="introduce-description">
+                        @Html.Raw(Model.Para2)
+                    </div>
+                </div>
+                <div class="introduce-item col-lg-6">
+                    <h2 class="introduce-name">@Html.DisplayFor(p => p.Topic4)</h2>
+                    <div class="introduce-description">
+                        @Html.Raw(Model.Para3)
+                    </div>
+                </div>
+                <div class="introduce-item col-lg-6">
+                    <h2 class="introduce-name">@Html.DisplayFor(p => p.Topic5)</h2>
+                    <div class="introduce-description">
+                        @Html.Raw(Model.Para4)
+                    </div>
+                </div>
+                <div class="introduce-item col-lg-6">
+                    <h2 class="introduce-name">@Html.DisplayFor(p => p.Topic6)</h2>
+                    <div class="introduce-description">
+                        @Html.Raw(Model.Para5)
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="introduce-detail">
+        <div class="container">
+            <div class="introduce-item">
+                <h1 class="introduce-heading">@Html.DisplayFor(p => p.Topic7)</h1>
+                <div class="introduce-description">
+                    @Html.Raw(Model.Para6)
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="introduce-footer">
+        <div class="container">
+            <div class="row">
+                <h1 class="introduce-heading">@Html.DisplayFor(p => p.Topic8)</h1>
+                <div class="introduce-item col-lg-7">
+                    <h2 class="introduce-name">@Html.DisplayFor(p => p.Topic9)</h2>
+                    <div class="introduce-description">
+                        @Html.Raw(Model.Para7)
+                    </div>
+                    <div class="introduce-item col-lg-5">
+                        <h2 class="introduce-name">@Html.DisplayFor(p => p.Topic10)</h2>
+                        <div class="introduce-description">
+                            @Html.Raw(Model.Para8)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+

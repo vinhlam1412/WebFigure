@@ -1,0 +1,150 @@
+﻿.form {
+    margin-top: calc(var(--header-height) + var(--header-sub) + 32px);
+    margin-bottom: 52px;
+}
+
+
+/* Register Form */
+
+.form-register {
+    border-left: 2px solid rgb(88, 88, 88);
+}
+.auth-form {
+    padding: 0 60px;
+}
+
+.auth-form__heading {
+    margin: 0 0 25px;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--light-red-color);
+    text-align: center;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
+.auth-form__title {
+    display: inline-block;
+    color: #353535;
+    font-weight: 500;
+    cursor: pointer;
+    margin-bottom: 6px;
+    font-size: 1.6rem;
+    letter-spacing: 0.5px;
+}
+
+.auth-form__input-name {
+    text-transform: capitalize;
+}
+
+.auth-form__input {
+    padding: 0 0 5px 4px;
+    display: block;
+    width: 100%;
+    color: var(--primary-color);
+    font-size: 1.6rem;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #3a5180;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    line-height: 2rem;
+}
+
+.auth-form__controls {
+    margin-top: 12px;
+    text-align: right;
+}
+
+.btn-check-in:hover {
+    color: var(--white-color);
+    background-color: var(--dark-red-color);
+}
+
+.btn-check-in {
+    width: 100%;
+    height: 42px;
+    margin-top: 24px;
+    font-weight: 500;
+    font-size: 1.8rem;
+    border-radius: 50px;
+    border-radius: 8px;
+    color: var(--white-color);
+    background-color: var(--light-red-color);
+}
+
+
+/* Login Form */
+
+.auth-form__checkbox {
+    zoom: 1.2;
+    cursor: pointer;
+}
+
+.auth-form__checkbox-description {
+    text-align: center;
+    position: relative;
+    margin-left: 5px;
+    font-size: 1.4rem;
+    font-weight: 400;
+    user-select: none;
+    top: -3px;
+}
+
+.auth-form__forgot {
+    float: right;
+    display: inline-block;
+}
+
+.auth-form__forgot-link:hover {
+    color: var(--light-red-color);
+}
+
+.auth-form__forgot-link {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #000;
+    text-decoration: none;
+    position: relative;
+    top: -2px;
+}
+
+.auth-form__wonder {
+    margin-top: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-form__wonder-text {
+    font-size: 1.3rem;
+    font-weight: 400;
+    user-select: none;
+}
+
+.auth-form__wonder-login {
+    text-decoration: none;
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-left: 8px;
+    margin-top: -3px;
+    color: var(--light-red-color);
+}
+
+
+/* Icon Eye */
+
+.auth-form__group {
+    position: relative;
+}
+
+.eye-open,
+.eye-close {
+    position: absolute;
+    top: 18px;
+    right: 0px;
+    font-size: 1.5rem;
+    padding: 12px;
+    cursor: pointer;
+}

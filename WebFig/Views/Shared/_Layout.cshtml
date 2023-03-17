@@ -1,0 +1,375 @@
+﻿<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Web Bán Mô Hình Figure</title>
+    <!-- Link reset css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Link Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- Link css -->
+    <link rel="stylesheet" href="~/Content/base.css">
+    <link rel="stylesheet" href="~/Content/style.css">
+    <link rel="stylesheet" href="~/Content/responsive.css">
+    <link rel="stylesheet" href="~/Content/grid.css">
+    <!-- Link icon -->
+    <link rel="stylesheet" href="~/Content/fonts/fontawesome-free-6.0.0-web/css/all.css" />
+    @*@Styles.Render("~/Content/style.css")*@
+    @Styles.Render("~/Content/base.css")
+    @Styles.Render("~/Content/menu.css")
+    @Styles.Render("~/Content/responsive.css")
+    @Scripts.Render("~/bundles/modernizr")
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="app">
+        <header class="header">
+            <div class="container">
+                <!-- Header Navigation -->
+                <nav class="header__navbar">
+                    <ul class="header__navbar-list">
+                        <li class="header__navbar-item">
+                            <label for="nav-mobile-input" class="header-menu">
+                                <i class="header-menu-icon fa-solid fa-bars"></i>
+                            </label>
+                            <input type="checkbox" class="nav__input" id="nav-mobile-input">
+                            <div class="nav__overlay"></div>
+                            <label for="nav-mobile-input" class="nav__overlay"></label>
+
+                            <!-- Menu -->
+                            <nav class="menu">
+                                <div class="nav__header">
+                                    <div class="nav__header-item">
+                                        <a href="" class="nav__mobile-item-link">
+                                            <img src="~/Content/img/logo.png" alt="logo" class="nav__mobile-logo">
+                                        </a>
+                                    </div>
+                                    <label for="nav-mobile-input" class="nav__header-item">
+                                        <i class="nav__header-icon fa-solid fa-xmark"></i>
+                                    </label>
+                                </div>
+                                <div class="nav__mobile-list">
+                        <li class="nav__mobile-item">
+                            <i class="nav__mobile-icon fa-solid fa-arrow-right-to-bracket"></i>
+                            <a href="" class="nav__mobile-item-link">
+                                Đăng nhập
+                            </a>
+                        </li>
+                        <li class="nav__mobile-item">
+                            <i class="nav__mobile-icon fa-brands fa-opencart"></i>
+                            <a href="" class="nav__mobile-item-link">
+                                Giỏ hàng
+                            </a>
+                        </li>
+                        <li class="nav__mobile-item">
+                            <i class="nav__mobile-icon fa-solid fa-bars-staggered"></i>
+                            <a href="" class="nav__mobile-item-link">
+                                Danh mục
+                            </a>
+                            <label for="drop-down">
+                                <i class="nav__mobile-icon nav__mobile-icon-down fa-solid fa-chevron-down"></i>
+                            </label>
+
+                            <input type="checkbox" hidden name="" class="nav__mobile-drop-down" id="drop-down">
+
+                            <ul class="nav__category">
+                                <li class="nav__category-item">
+                                    <a href="" class="nav__category-item-link">Scale</a>
+                                </li>
+                                <li class="nav__category-item">
+                                    <a href="" class="nav__category-item-link">Figma</a>
+
+                                </li>
+                                <li class="nav__category-item">
+                                    <a href="" class="nav__category-item-link">Nendoroid</a>
+                                </li>
+                                <li class="nav__category-item">
+                                    <a href="" class="nav__category-item-link">Game Prize</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav__mobile-item">
+                            <i class="nav__mobile-icon fa-solid fa-circle-info"></i>
+                            <a href="" class="nav__mobile-item-link">
+                                Giới thiệu
+                            </a>
+                        </li>
+                        <li class="nav__mobile-item">
+                            <i class="nav__mobile-icon fa-solid fa-bullhorn"></i>
+                            <a href="" class="nav__mobile-item-link">
+                                Tin tức
+                            </a>
+                        </li>
+                        <div class="nav--seperate"></div>
+                        <li class="nav__mobile-item">
+                            <i class="nav__mobile-icon fa-solid fa-arrow-right-from-bracket"></i>
+                            <a href="" class="nav__mobile-item-link">
+                                Đăng xuất
+                            </a>
+                        </li>
+            </div>
+            </nav>
+
+            @if (Session["TaiKhoan"] == null)
+            {
+                <a href="#my-modal" class="header__navbar-login hide-on-mobile-ipad" style="padding-right:10px">
+                    <strong class="header__navbar-login hide-on-mobile-ipad">@Html.ActionLink("Đăng Nhập", "DangNhap", "NguoiDung")</strong>
+                </a>
+                <a href="#my-modal" class="header__navbar-login hide-on-mobile-ipad" style="padding-left:10px">
+                    <strong> | </strong>
+                </a>
+                <a href="" class="header__navbar-login hide-on-mobile-ipad " style="padding-left:10px">
+                    <strong class="header__navbar-login hide-on-mobile-ipad">@Html.ActionLink("Đăng Ký", "DangKy", "NguoiDung")</strong>
+                </a>
+
+            }
+            else
+            {
+                <a href="#my-modal" class="header__navbar-login hide-on-mobile-ipad" style="padding-right:10px">
+                    <strong>Xin chào: @Session["FullName"]</strong>
+                </a>
+                <a href="#my-modal" class="header__navbar-login hide-on-mobile-ipad">
+                    <strong> | </strong>
+                </a>
+                <a href="" class="header__navbar-login hide-on-mobile-ipad " style="padding-right:10px">
+                    <strong class="header__navbar-login hide-on-mobile-ipad">@Html.ActionLink("Đăng Xuất", "DangXuat", "NguoiDung")</strong>
+                </a>
+                <a href="#my-modal" class="header__navbar-login hide-on-mobile-ipad">
+                    <strong style="padding-left:10px"> | </strong>
+                </a>
+                <a href="" class="header__navbar-login hide-on-mobile-ipad " style="padding-right:10px">
+                    <strong class="header__navbar-login hide-on-mobile-ipad">@Html.ActionLink("Đơn Hàng", "DSDonHang", "DonHang")</strong>
+                </a>
+            }
+            </li>
+
+            <li class="header__navbar-item">
+                <a href="/" class="header__navbar-logo-link">
+                    <div class="header__navbar-logo-img" style="background-image: url(/Content/img/logo.png);"></div>
+                </a>
+            </li>
+
+            <li class="header__navbar-item">
+                <div class="header__navbar-wrap">
+                    <div class="header__navbar-search">
+                        <i class="header__navbar-icon-search fas fa-search"></i>
+                        <div class="header__search-input-wrap">
+                            @using (Html.BeginForm("Index", "UserHome", FormMethod.Get, new { @class = "form-inline" }))
+                            {
+                                <input type="text" value="@ViewBag.Find" name="SearchString" placeholder="Nhập tên sản phẩm" size="40px" style="line-height:22px" />
+                                <p></p>
+                                <input type="submit" class="btn btn-info" value="Tìm kiếm">
+                            }
+                        </div>
+                    </div>
+
+                    <a href="@Url.Action("GioHang", "GioHang")" class="header__navbar-bag hide-on-mobile-ipad">
+                        <strong class=""></strong>
+                        <i class="header__navbar-icon-bag fa-solid fa-cart-shopping"></i>
+                    </a>
+                </div>
+            </li>
+            </ul>
+            </nav>
+    </div>
+    <!-- Header Sub -->
+    <div class="header__sub">
+        <div class="header__sub-wrap hide-on-mobile">
+            <ul class="header__sub-list">
+                <li class="header__sub-item header__sub-item-active">
+                    <a href="@Url.Action("Index", "UserHome")" class="header__sub-item-link">Trang chủ</a>
+
+                </li>
+                <li class="header__sub-item dropdown">
+                    <a class="header__sub-item-link dropdown-toggle" data-toggle="dropdown" href="">
+                        Danh mục sản phẩm
+                    </a>
+                    @{Html.RenderAction("Index", "Menu"); }
+
+
+                </li>
+                <li class="header__sub-item dropdown">
+                    <a class="header__sub-item-link dropdown-toggle" data-toggle="dropdown" href="">
+                        Hãng
+                    </a>
+                    @{Html.RenderAction("Index", "NSX");}
+
+                </li>
+                <li class="header__sub-item">
+                    <a href="@Url.Action("Gioithieu", "GioiThieu")" class="header__sub-item-link">
+                        Giới thiệu
+                        <i class="header__sub-item-icon fas fa-chevron-down"></i>
+                    </a>
+                    <ul class="header__sub-description-list">
+                        <li class="header__sub-description-item">
+                            <a class="header__sub-description-item-link" href="">Về Figure</a>
+                        </li>
+                        <li class="header__sub-description-item">
+                            <a class="header__sub-description-item-link" href="">Về Figma</a>
+                        </li>
+                        <li class="header__sub-description-item">
+                            <a class="header__sub-description-item-link" href="">Về Scale</a>
+                        </li>
+                        <li class="header__sub-description-item">
+                            <a class="header__sub-description-item-link" href="">Về Game prize</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    </header>
+
+
+
+
+    @RenderBody()
+
+
+    <footer class="footer">
+        <div class="grid wide">
+            <div class="row">
+                <div class="col l-3">
+                    <h1 class="footer-heading">Giới Thiệu</h1>
+                    <ul class="footer-list">
+                        <li class="footer-item">
+                            <p class="footer-item__description">Chào mừng bạn đến với web bán hàng Figure</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col l-3">
+                    <h1 class="footer-heading">Địa Chỉ</h1>
+                    <ul class="footer-list">
+                        <li class="footer-item">
+                            <div class="footer-item__location">
+                                <i class="footer-icon fas fa-map-marked-alt"></i>80/66/49 Dương Quảng Hàm, Phường 5, Quận Gò Vấp, Tp.HCM
+                            </div>
+                        </li>
+                        <li class="footer-item">
+                            <a href="tel:+0971521472" class="footer-item__link">
+                                <i class="footer-icon fas fa-phone-alt"></i>0971 521 472
+                            </a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="mailto:khaiduchoa@gmail.com" class="footer-item__link">
+                                <i class="footer-icon fas fa-envelope"></i>khaiduchoa@gmail.com
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col l-3">
+                    <h1 class="footer-heading">Menu</h1>
+                    <ul class="footer-list footer-wrap">
+                        <div class="footer-item-wrap">
+                        <li class="footer-item footer-item--active">
+                            <a href="" class="footer-item__link">Trang Chủ</a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="" class="footer-item__link">Cửa Hàng</a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="" class="footer-item__link">Giới Thiệu</a>
+                        </li>
+                </div>
+                <div class="footer-item-wrap">
+                    <li class="footer-item">
+                        <a href="" class="footer-item__link">Liên Hệ</a>
+                    </li>
+                    <li class="footer-item">
+                        <a href="" class="footer-item__link">Tin Tức</a>
+                    </li>
+                </div>
+                </ul>
+            </div>
+            <div class="col l-3">
+                <h1 class="footer-heading">Mạng Xã Hội</h1>
+                <div class="footer-wrap">
+                    <a href="" class="footer-item__icon facebook">
+                        <i class="fab fa-facebook-f"></i>
+                        <span class="tooltip">Facebook</span>
+                    </a>
+                    <a href="" class="footer-item__icon twitter">
+                        <i class="fab fa-twitter"></i>
+                        <span class="tooltip">Twitter</span>
+                    </a>
+                    <a href="" class="footer-item__icon instagram">
+                        <i class="fab fa-instagram"></i>
+                        <span class="tooltip">Instagram</span>
+                    </a>
+                    <a href="" class="footer-item__icon youtube">
+                        <i class="fab fa-youtube"></i>
+                        <span class="tooltip">Youtube</span>
+                    </a>
+                </div>
+            </div>
+            <div class="col l-6">
+                <h1 class="footer-heading">Đăng Ký Nhận Thông Tin</h1>
+                <div class="footer-wrap">
+                    <input type="text" class="footer-input" placeholder="Email...">
+                    <div class="footer-register" type="submit" value="ĐĂNG KÝ">ĐĂNG KÝ</div>
+                </div>
+            </div>
+            <div class="col l-6">
+                <h1 class="footer-heading">Thanh Toán</h1>
+                <ul class="footer-list footer-wrap">
+                    <li class="footer-item">
+                        <img src="https://upload.wikimedia.org/wikipedia/vi/thumb/f/fe/MoMo_Logo.png/220px-MoMo_Logo.png" alt="" class="footer-item__img">
+                    </li>
+                    <li class="footer-item">
+                        <img src="https://brademar.com/wp-content/uploads/2022/05/PayPal-Logo-PNG-1999-%E2%80%93-2007.png" alt="" class="footer-item__img">
+                    </li>
+                </ul>
+            </div>
+        </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer__bottom">
+            <div class="grid wide">
+                <p class="footer__text">© 2022 - Bản quyền thuộc về Công ty Khởi Nghiệp 1 thành Ziên</p>
+            </div>
+        </div>
+    </footer>
+    </div>
+    <style>
+        .header__navbar-icon-search::after {
+            display: none;
+        }
+
+        .header__navbar-login a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-item img:first-child {
+            width: 65px;
+            height: 50px;
+            border-radius: 5px;
+            padding-right: 12px;
+        }
+    </style>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    @RenderSection("scripts1", required: false)
+    @RenderSection("upload", required: false)
+    @RenderSection("upload1", required: false)
+    @RenderSection("upload2", required: false)
+    @RenderSection("upload3", required: false)
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="~/Content/Site.js"></script>
+</body>
+</html>

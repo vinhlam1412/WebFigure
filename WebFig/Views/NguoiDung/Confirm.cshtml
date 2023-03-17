@@ -1,0 +1,34 @@
+﻿@Styles.Render("~/Content/css")
+@{
+    ViewBag.Title = "Confirm";
+}
+<link rel="stylesheet" href="~/Content/base.css">
+<link rel="stylesheet" href="~/Content/responsive.css">
+<link rel="stylesheet" href="newglyphicon.css" />
+<br />
+<br />
+<div style="margin-top:200px" class="alert alert-warning" id="previous">
+    <strong>Confirm Your Account</strong>
+    <input type="button" class="btn btn-warning" value="Confirm" onclick="XacNhan()" />
+</div>
+<div style="margin-top: 200px; display: none" class="alert alert-success" id="after">
+    <strong><span class="glyphicon glyphicon-ok"></span>Your Account Is Active Now</strong>
+</div>
+
+<script>
+        function XacNhan() {
+            $.ajax({
+            type: "post",
+            url: "/NguoiDung/RegisterConfirm",
+            data: {'idAccount': '@ViewBag.idAccount' },
+            success: function (msg) {
+                $("#previous").hide();
+                $("#after").show();
+                alert(msg);
+            }
+            })
+
+            window.history.pushState('', 'Xac Nhan Tai Khoan', '/XacNhanMatKhau');
+    }
+</script>
+

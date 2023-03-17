@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+  
+</head>
+<body>
+                <div class="header-confirm " style="width: 100%; background-color: #000; height: 78px; color: #fff; text-align: center; margin-bottom: 12px; margin: 0 auto; display: flex; align-items: center;">
+                    <span style="font-size: 3rem; margin: 0 auto;">
+                        WIBU
+                    </span>
+                </div>
+    <div class="col-lg-6">
+        <div class="payment-list-info" style="margin-left: 60px; padding-left: 60px;">
+            <div class="row">
+                <div class="payment-item" style="font-size: 18px; font-weight: 400; line-height: 5px;">
+                    <p style="width: 140px; display: inline-block;"> Tên khách hàng: </p> <strong>{{CustomerName}}</strong>
+                </div>
+                <div class="payment-item" style="font-size: 18px; font-weight: 400; line-height: 5px;">
+                    <p style="width: 140px; display: inline-block;"> Số điện thoại: </p> <strong>{{Phone}}</strong>
+                </div>
+                <div class="payment-item" style="font-size: 18px; font-weight: 400; line-height: 5px;">
+                    <p style="width: 140px; display: inline-block;">Email: </p> <strong>{{Email}}</strong>
+                </div>
+                <div class="payment-item" style="font-size: 18px; font-weight: 400; line-height: 5px;">
+                    <p style="width: 140px; display: inline-block;"> Địa chỉ: </p> <strong>{{Address}}</strong>
+                </div>
+                <div class="payment-item" style="font-size: 18px; font-weight: 400; line-height: 5px;">
+                    <p style="width: 140px; display: inline-block;"> Ngày đặt: </p> <strong>{{DateBuy}}</strong>
+                </div>
+                <div class="payment-item" style="font-size: 18px; font-weight: 400; line-height: 5px;">
+                    <p style="width: 140px; display: inline-block;"> Tổng tiền: </p> <strong style="color: #c30005">{{Total}}</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<style>
+
+
+        .payment-item span {
+            margin-left: 18px;
+        }
+
+    .payment-method {
+        margin-top: 36px;
+    }
+
+    .payment-title {
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 12px;
+    }
+
+    .form-control {
+        width: 80%;
+        border: none;
+        cursor: pointer;
+        height: 36px;
+    }
+
+</style>
