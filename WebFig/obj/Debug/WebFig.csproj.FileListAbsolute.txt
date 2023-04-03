@@ -1172,3 +1172,11 @@ C:\Users\MSI-VN\Desktop\WebFig\WebFig\WebFig\obj\Debug\WebFig.csproj.CoreCompile
 C:\Users\MSI-VN\Desktop\WebFig\WebFig\WebFig\obj\Debug\WebFig.csproj.CopyComplete
 C:\Users\MSI-VN\Desktop\WebFig\WebFig\WebFig\obj\Debug\WebFig.dll
 C:\Users\MSI-VN\Desktop\WebFig\WebFig\WebFig\obj\Debug\WebFig.pdb
+D:\Do an\WebFig\WebFig\WebFig\bin\Facebook.dll
+D:\Do an\WebFig\WebFig\WebFig\bin\PagedList.dll
+D:\Do an\WebFig\WebFig\WebFig\bin\PagedList.Mvc.dll
+D:\Do an\WebFig\WebFig\WebFig\bin\PayPal.dll
+D:\Do an\WebFig\WebFig\WebFig\bin\Facebook.xml
+D:\Do an\WebFig\WebFig\WebFig\bin\PagedList.xml
+D:\Do an\WebFig\WebFig\WebFig\bin\PagedList.Mvc.xml
+D:\Do an\WebFig\WebFig\WebFig\bin\PayPal.xml

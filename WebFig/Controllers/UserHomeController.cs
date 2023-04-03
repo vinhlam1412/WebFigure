@@ -20,21 +20,21 @@ namespace WebFig.Controllers
         public ActionResult Index(string SearchString, int idCategory = 0, int idNSX = 0)
         {
             ViewBag.Find = SearchString;
-            var all_sach = (from ele in data.Products select ele).OrderBy(p => p.idProduct);
+            var all_product = (from ele in data.Products select ele).OrderBy(p => p.idProduct);
             if (!String.IsNullOrEmpty(SearchString))
             {
-                all_sach = (IOrderedQueryable<Product>)all_sach.Where(a => a.ten.Contains(SearchString));
-                return View(all_sach.ToList());
+                all_product = (IOrderedQueryable<Product>)all_product.Where(a => a.ten.Contains(SearchString));
+                return View(all_product.ToList());
             }
             else if (idCategory == 0 && idNSX == 0)
             {
-                var sanPhams = data.Products.ToList();
-                return View(sanPhams.ToList());
+                var products = data.Products.ToList();
+                return View(products.ToList());
             }
             else if (idCategory != 0)
             {
-                var sanPhams = data.Products.Where(x => x.idCategory == idCategory);
-                return View(sanPhams.ToList());
+                var products = data.Products.Where(x => x.idCategory == idCategory);
+                return View(products.ToList());
 
             }
             else if (idNSX != 0)

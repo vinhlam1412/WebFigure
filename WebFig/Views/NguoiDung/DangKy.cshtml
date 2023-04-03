@@ -49,15 +49,7 @@
                                     @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
                                 </div>
                             </div>
-                            @*            @Html.DropDownList("idCategory", ViewBag.loai as SelectList, new { @class = "modal-input" })*@
-
-                            @* <div class="auth-form__group">
-                                    @Html.LabelFor(model => model.password, "Mật khẩu", htmlAttributes: new { @class = "auth-form__title" })
-                                    <div class="col-md-10">
-                                        @Html.TextBox("MatKhauXacNhan" )
-
-                                    </div>
-                                </div>*@
+  
                             <div class="auth-form__group">
                                 @Html.LabelFor(model => model.password_verify, "Mật khẩu xác nhận", htmlAttributes: new { @class = "auth-form__title" })
                                 <div class="col-md-10">

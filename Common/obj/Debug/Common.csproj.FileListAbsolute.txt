@@ -21,3 +21,14 @@ G:\Dowloads\WebFig\WebFig\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
 G:\Dowloads\WebFig\WebFig\Common\obj\Debug\Common.csproj.CopyComplete
 G:\Dowloads\WebFig\WebFig\Common\obj\Debug\Common.dll
 G:\Dowloads\WebFig\WebFig\Common\obj\Debug\Common.pdb
+D:\Do an\WebFig\WebFig\Common\bin\Debug\Common.dll
+D:\Do an\WebFig\WebFig\Common\bin\Debug\Common.pdb
+D:\Do an\WebFig\WebFig\Common\bin\Debug\PagedList.dll
+D:\Do an\WebFig\WebFig\Common\bin\Debug\PagedList.Mvc.dll
+D:\Do an\WebFig\WebFig\Common\bin\Debug\PagedList.xml
+D:\Do an\WebFig\WebFig\Common\bin\Debug\PagedList.Mvc.xml
+D:\Do an\WebFig\WebFig\Common\obj\Debug\Common.csproj.AssemblyReference.cache
+D:\Do an\WebFig\WebFig\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+D:\Do an\WebFig\WebFig\Common\obj\Debug\Common.csproj.CopyComplete
+D:\Do an\WebFig\WebFig\Common\obj\Debug\Common.dll
+D:\Do an\WebFig\WebFig\Common\obj\Debug\Common.pdb
